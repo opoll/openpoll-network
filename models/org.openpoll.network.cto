@@ -48,7 +48,7 @@ asset Response identified by responseHash {
   o Integer timestamp
   o String respondentAddress
   o String signature
-  o String[] answers
+  o String[] answerHashes
   o String confirmationStatus
 }
 
