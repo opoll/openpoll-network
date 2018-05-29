@@ -1,0 +1,9 @@
+# Ignored Directories
+
+
+# Ignored Files
+permissions.acl
+
+# Ignore File Types
+*.bna
+*.card
