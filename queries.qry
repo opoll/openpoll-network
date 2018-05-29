@@ -1,3 +1,10 @@
 /**
   Rich queries for OpenPoll business network
 */
+
+query selectPollByPollHash {
+  description: "Selects the poll that matches the poll hash provided."
+  statement:
+      SELECT org.openpoll.network.Poll
+          WHERE (pollHash == _$pollHash)
+}

@@ -18,25 +18,58 @@
 
 namespace org.openpoll.network
 
-participant SampleParticipant identified by participantId {
-  o String participantId
+/**
+ * This is a participant type called Client identified by it's clientId field
+ * which is a string. Basic fields are expressed.
+ */
+participant Client identified by clientId {
+  o String clientId
   o String firstName
   o String lastName
 }
 
-asset SampleAsset identified by assetId {
-  o String assetId
-  --> SampleParticipant owner
-  o String value
+/**
+ * This is a participant type called Respondent identified by it's respondentId field
+ * which is a string. Basic fields are expressed.
+ */
+participant Respondent identified by respondentId {
+  o String respondentId
+  o String phoneNumber
+  o Boolean confirmed
 }
 
-transaction SampleTransaction {
-  --> SampleAsset asset
-  o String newValue
+/**
+ * This is an asset type called Response identified by it's responseHash field
+ * which is a string. Basic fields are expressed.
+ */
+asset Response identified by responseHash {
+  o String responseHash
+  o String pollHash
+  o Integer timestamp
+  o String respondentAddress
+  o String signature
+  o String[] answers
+  o String confirmationStatus
 }
 
-event SampleEvent {
-  --> SampleAsset asset
-  o String oldValue
-  o String newValue
+/**
+ * This is an asset type called Poll identified by it's pollHash field
+ * which is a string. Basic fields are expressed.
+ */
+asset Poll identified by pollHash {
+  o String pollHash
+  o String title
+  o String description
+  o Integer expiry
+  o Integer maxResponses
+  o String[] questionHashes
+  o Response[] responses
+}
+
+transaction RespondToPoll {
+  o Response response
+}
+
+event ResponseConfirmed {
+  o Response response
 }
