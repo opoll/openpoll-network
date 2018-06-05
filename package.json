@@ -3,7 +3,7 @@
     "composer": "^0.19.6"
   },
   "name": "openpoll-network",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "The official business network for the Openpoll Blockchain",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/openpoll-network.bna",

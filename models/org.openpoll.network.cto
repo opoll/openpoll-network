@@ -19,26 +19,6 @@
 namespace org.openpoll.network
 
 /**
- * This is a participant type called Client identified by it's clientId field
- * which is a string. Basic fields are expressed.
- */
-participant Client identified by clientId {
-  o String clientId
-  o String firstName
-  o String lastName
-}
-
-/**
- * This is a participant type called Respondent identified by it's respondentId field
- * which is a string. Basic fields are expressed.
- */
-participant Respondent identified by respondentId {
-  o String respondentId
-  o String phoneNumber
-  o Boolean confirmed
-}
-
-/**
  * This is an asset type called Response identified by it's responseHash field
  * which is a string. Basic fields are expressed.
  */
@@ -49,7 +29,6 @@ asset Response identified by responseHash {
   o String respondentAddress
   o String signature
   o String[] answerHashes
-  o String confirmationStatus
 }
 
 /**
